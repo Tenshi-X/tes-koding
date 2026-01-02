@@ -27,7 +27,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/fetch-and-save", async (req, res) => {
-  for (let i = 1; i < 400, i++; ) {
+  // harusnya bisa memakai perulangan untuk mengambil data by id dari 1 sampai 400 namun belum berhasil
+  for (let i = 1; i < 401, i++; ) {
     try {
       const data = await axios
         .get("https://pokeapi.co/api/v2/pokemon/2/")

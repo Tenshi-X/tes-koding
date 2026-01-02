@@ -1,32 +1,5 @@
 const Pokemon = require("../models/pokemon_model.js");
 
-// Create and Save a new Pokemon
-exports.create = (req, res) => {
-     if (!req.body) {
-       res.status(400).send({
-         message: "Content can not be empty!",
-       });
-     }
-     
-     const pokemon = new Pokemon({
-       name : req.body.name,
-       base_experience : req.body.base_experience,
-       weight : req.body.weight,
-       image_path : req.body.image_path
-     });
-
-     // Save Pokemon in the database
-     Pokemon.insert(pokemon, (err, data) => {
-       if (err)
-         res.status(500).send({
-           message:
-             err.message || "Some error occurred while creating the Pokemon.",
-         });
-       else res.send(data);
-     });
-};
-
-// Retrieve all Pokemons from the database (with condition).
 exports.findAll = (req, res) => {
 
  Pokemon.getAll(title, (err, data) => {
@@ -40,7 +13,6 @@ exports.findAll = (req, res) => {
 
 };
 
-// Find a single Pokemon with a id
 exports.findById = (req, res) => {
      Pokemon.GetPokemonById(req.params.id, (err, data) => {
        if (err) {
