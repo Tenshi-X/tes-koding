@@ -12,5 +12,7 @@ Workflow pengerjaan
 Untuk menjalankan program, jalankan command pada terminal
 "npm install express axios mysql2 cors body-parser"
 
+kemudian import database pokemon_db.sql pada repo ini ke localhost
+
 run program dengan command
 "node app.js"
